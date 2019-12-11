@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "task1": "nodemon ./src/task1.js",
-    "task2": "nodemon ./src/task2.js"
+    "task2": "nodemon ./src/task2.js",
+    "task3:babel": "babel-node ./src/task3.js",
+    "task3": "nodemon --exec npm run task3:babel"
   },
   "repository": {
     "type": "git",
@@ -19,6 +21,9 @@
   },
   "homepage": "https://github.com/ivandevp/node-mentoring-program#readme",
   "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/node": "^7.7.4",
+    "@babel/preset-env": "^7.7.6",
     "nodemon": "^2.0.2"
   },
   "dependencies": {
