@@ -1,0 +1,26 @@
+{
+  "name": "node-mentoring-program",
+  "version": "1.0.0",
+  "description": "EPAM's Node mentoring program",
+  "main": "index.js",
+  "scripts": {
+    "task1": "nodemon ./src/task1.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ivandevp/node-mentoring-program.git"
+  },
+  "keywords": [],
+  "author": "Ivan Medina <ivan_medina@epam.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ivandevp/node-mentoring-program/issues"
+  },
+  "homepage": "https://github.com/ivandevp/node-mentoring-program#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10"
+  }
+}
