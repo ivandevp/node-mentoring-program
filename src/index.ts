@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 
 app.use(express.json());
 
-app.get("/", (_, res) => res.end("Hola mundo!"));
+app.get("/", (req, res) => res.end("Welcome to in-memory data REST API!"));
 
 app.use("/api", router);
 
