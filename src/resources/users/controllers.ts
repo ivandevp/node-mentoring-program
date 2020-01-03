@@ -1,5 +1,7 @@
 import { Request, Response } from "express";
+import { ValidatedRequest } from "express-joi-validation";
 import { userModel } from "./models";
+import { UserRequestSchema } from "./schemas";
 
 /** User Controller */
 export const userController = {
@@ -24,11 +26,11 @@ export const userController = {
       res.status(404).json({ success: false, message: "User not found" });
     }
   },
-  create(req: Request, res: Response) {
+  create(req: ValidatedRequest<UserRequestSchema>, res: Response) {
     const user = userModel.create(req.body);
     res.json(user);
   },
-  update(req: Request, res: Response) {
+  update(req: ValidatedRequest<UserRequestSchema>, res: Response) {
     const updatedUser = userModel.update(req.params.id, req.body);
 
     if (updatedUser) {
