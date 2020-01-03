@@ -7,10 +7,19 @@ const rl = readline.createInterface({
 
 const reverse = text => text.split('').reverse().join('');
 
-rl.question('Enter a text\n', (answer) => {
-  const reversedText = reverse(answer);
 
-  console.log(`Your text when reversed looks like ${reversedText}`);
+function run() {
+  rl.question('Enter a text\n', (answer) => {
+    const reversedText = reverse(answer);
 
-  rl.close();
-});
+    console.log(`Your text when reversed looks like ${reversedText}`);
+
+    rl.close();
+  });
+}
+
+if (module.parent) {
+  module.exports = run;
+} else {
+  run();
+}

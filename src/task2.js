@@ -9,16 +9,24 @@ const txtFilePath = path.resolve(__dirname, './txt/output.txt');
 const readStream = fs.createReadStream(csvFilePath);
 const writeStream= fs.createWriteStream(txtFilePath);
 
-pipeline(
-  readStream,
-  csvtojson(),
-  writeStream,
-  (error) => {
-    if (error) {
-      console.log(error);
-      return;
-    }
+function run() {
+  pipeline(
+    readStream,
+    csvtojson(),
+    writeStream,
+    (error) => {
+      if (error) {
+        console.log(error);
+        return;
+      }
 
-    console.log('CSV has been converted to TXT');
-  }
-);
+      console.log('CSV has been converted to TXT');
+    }
+  );
+}
+
+if (module.parent) {
+  module.exports = run;
+} else {
+  run();
+}
