@@ -1,13 +1,13 @@
 {
   "name": "node-mentoring-program",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "EPAM's Node mentoring program",
   "main": "index.js",
   "scripts": {
-    "task1": "nodemon ./src/task1.js",
-    "task2": "nodemon ./src/task2.js",
-    "task3:babel": "babel-node ./src/task3.js",
-    "task3": "nodemon --exec npm run task3:babel"
+    "task2.1:babel": "babel-node ./src --extensions \".ts\"",
+    "task2.1": "nodemon --watch 'src/**/*.ts' --exec npm run task2.1:babel",
+    "typecheck:dev": "tsc --watch",
+    "typecheck": "tsc --watch"
   },
   "repository": {
     "type": "git",
@@ -24,9 +24,15 @@
     "@babel/core": "^7.7.5",
     "@babel/node": "^7.7.4",
     "@babel/preset-env": "^7.7.6",
-    "nodemon": "^2.0.2"
+    "@babel/preset-typescript": "^7.7.7",
+    "@types/express": "^4.17.2",
+    "@types/node": "^13.1.2",
+    "@types/uuid": "^3.4.6",
+    "nodemon": "^2.0.2",
+    "typescript": "^3.7.4"
   },
   "dependencies": {
-    "csvtojson": "^2.0.10"
+    "express": "^4.17.1",
+    "uuid": "^3.3.3"
   }
 }
